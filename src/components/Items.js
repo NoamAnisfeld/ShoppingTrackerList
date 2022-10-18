@@ -1,15 +1,16 @@
-import React from 'react';
+import React from "react";
 
-function Items({price,description,title,category}) {
+function Items({ price, description, title, category }) {
   return (
     <div>
+      <form className="income-list">
         <p>{price}</p>
-        <h1>{title}</h1>
-        <h1>{description}</h1>
-        <h1>{category}</h1>
-        <h1>Test</h1>
+        <p>{title}</p>
+        <p>{description}</p>
+        <p>{category}</p>
+      </form>
     </div>
-  )
+  );
 }
 
 export default Items;

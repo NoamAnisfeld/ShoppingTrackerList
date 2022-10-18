@@ -20,6 +20,7 @@ const Form = ({ income, setIncome }) => {
         store: store.current.value,
         price: price.current.value,
         date: newD.getTime(),
+        isArchive : false
       },
     ]);
 

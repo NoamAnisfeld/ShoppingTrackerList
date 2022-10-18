@@ -13,47 +13,58 @@ import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Items from "../components/Items";
 
-
-
 const Home = () => {
+  const [visible,setVisible] = useState(5);
+  const showMoreItems = () =>{
+    setVisible((prevValue) => prevValue + 3);
+  };
+
   const items = useSelector((state) => state.items.value);
   const dispatch = useDispatch();
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
-      dispatch(setItems(response.data.items));
 
-      console.log(response.data);
+      const arr = response.data.map(item =>{
+        return{
+          ...item,
+          isArchive : false
+        }
+      })
+      dispatch(setItems(arr));
+      console.log(arr);
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [income, setIncome] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
-
-
 
   useEffect(() => {
     let temp = 0;
-    for (let i = 0; i < income.length; i++) {
-      temp += parseInt(income[i].price);
+    for (let i = 0; i < items.length; i++) {
+      temp += parseInt(items[i].price);
     }
     setTotalIncome(temp);
-  }, [income]);
+    console.log(items);
+  }, [items]);
 
+  
   return (
     <div className="App">
       <List totalIncome={totalIncome} />
-      <Form income={income} setIncome={setIncome} />
-      <List2 income={income} setIncome={setIncome} />
+      <Form income={items} setIncome={(data)=> dispatch(setItems(data))} />
+      <List2 income={items} setIncome={(data)=> dispatch(setItems(data))} />
       <div>
-        <Items
-          category={items?.category}
-          title={items?.title}
-          price={items?.price}
-          description={items?.description}
-        />
+        {items.slice(0,visible).map((item, i) => (
+          <Items
+            key={i}
+          />
+        ))}
       </div>
+      <button onClick={showMoreItems}>
+          All Items
+        </button>
+      
     </div>
   );
 };
