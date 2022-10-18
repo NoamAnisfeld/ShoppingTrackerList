@@ -6,6 +6,7 @@ function List2({income,setIncome}) {
     let temp = income.filter((v,index) => index !== i);
     setIncome(temp);
   }
+  
   const addArchive = i =>{
     let temp = income.filter((v,index) => index === i);
     setIncome(temp);

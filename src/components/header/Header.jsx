@@ -1,7 +1,6 @@
-import "../navBar/navBar.css";
 import "./header.css";
 import { AppBar, Container, Toolbar } from "@material-ui/core";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AutoModal from "../Authentication/AutoModal";
 
 function Header(user) {
@@ -10,12 +9,13 @@ function Header(user) {
         <Container>
           <Toolbar>
             <Link to="/" className="logo">
-              Shopping Tracker List
+              Tracker List
             </Link>
             <div>
               <nav className="nav__container">
                 <ul className="ul__nav">
-                  <CustomLink to="/about">About</CustomLink>
+                  <Link to="/about">About</Link>
+                  <Link to="/archive">Archive</Link>
                 </ul>
               </nav>
             </div>
@@ -25,15 +25,5 @@ function Header(user) {
       </AppBar>
   );
 }
-function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-  return (
-    <li className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </li>
-  );
-}
+
 export default Header;

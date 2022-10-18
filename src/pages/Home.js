@@ -9,28 +9,34 @@ import Form from "../components/Form";
 import { useEffect } from "react";
 import List2 from "../components/List2";
 import axios from "axios";
-import Items from "../components/Items/Items";
+import Items from "../components/items/Items";
+import { setItems } from "../redux/itemsRedux/itemSlice";
+import { useSelector, useDispatch } from "react-redux";
+
 
 const Home = () => {
-  const [item, setItem] = useState({});
+  const items = useSelector((state) => state.items.value);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
-      setItem(response.data.item);
+      dispatch(setItems(response.data.items));
 
       console.log(response.data);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [income, setIncome] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
+
+
 
   useEffect(() => {
     let temp = 0;
     for (let i = 0; i < income.length; i++) {
       temp += parseInt(income[i].price);
     }
-
     setTotalIncome(temp);
   }, [income]);
 
@@ -41,9 +47,10 @@ const Home = () => {
       <List2 income={income} setIncome={setIncome} />
       <div>
         <Items
-          title={item?.title}
-          price={item?.price}
-          description={item?.description}
+          category={items?.category}
+          title={items?.title}
+          price={items?.price}
+          description={items?.description}
         />
       </div>
     </div>

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import {Route , Routes} from 'react-router-dom';
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import Alert from "./components/Alert";
+import ArchiveItems from "./components/Authentication/ArchiveItems";
 
 function App() {
   
@@ -15,9 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element= {<Home/>} />
           <Route path="/about" element= {<About/>} />
+          <Route path="/archive" element= {<ArchiveItems/>} />
         </Routes>
       </div>
-      <Alert/>
       <Footer/>
     </div>
   );

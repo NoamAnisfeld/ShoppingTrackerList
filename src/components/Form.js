@@ -1,21 +1,7 @@
 import React, { useRef } from "react";
-import Items from "./Items/Items";
-import { useEffect ,useState} from "react";
-import axios from "axios";
 
 const Form = ({ income, setIncome }) => {
-    const [item,setItem] = useState({});
-
-    useEffect(()=>{
-        axios.get("https://fakestoreapi.com/products").then(
-          (response) =>{
-            setItem(response.data.item);
-      
-            console.log(response.data);
-          }
-        );
-      },[]);
-
+   
   const itemName = useRef(null);
   const store = useRef(null);
   const date = useRef(null);
@@ -51,12 +37,6 @@ const Form = ({ income, setIncome }) => {
         <input type="number" name="price" className="price" placeholder="Price" ref={price}/>
         <input type="date" name="date" className="date" placeholder="Date" ref={date}/>
         <input type="submit" value="Add Item" />
-        
-        <Items
-          title={item?.title}
-          price={item?.price}
-          description={item?.description}
-        />
       </div>
     </form>
   );
