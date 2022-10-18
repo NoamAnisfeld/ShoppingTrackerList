@@ -15,8 +15,6 @@ function Header(user) {
             <div>
               <nav className="nav__container">
                 <ul className="ul__nav">
-                  <CustomLink to="/upCoins">UpCoins</CustomLink>
-                  <CustomLink to="/downCoins">DownCoins</CustomLink>
                   <CustomLink to="/about">About</CustomLink>
                 </ul>
               </nav>
