@@ -3,7 +3,6 @@ import "./header.css";
 import { AppBar, Container, Toolbar } from "@material-ui/core";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import AutoModal from "../Authentication/AutoModal";
-import UserSideBar from "../Authentication/UserSideBar";
 
 function Header(user) {
   return (

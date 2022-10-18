@@ -5,7 +5,6 @@ import { Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
-import { useState } from "react";
 
 const useStyles = makeStyles({
   container: {
