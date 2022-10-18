@@ -11,7 +11,8 @@ import List2 from "../components/List2";
 import axios from "axios";
 import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";
-import Items from "../components/items/Items";
+import Items from "../components/Items";
+
 
 
 const Home = () => {
