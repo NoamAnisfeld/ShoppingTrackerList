@@ -1,0 +1,54 @@
+.footer{
+    position: relative;
+    padding: 6rem 2rem;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #0B1426;
+}
+
+.footer__socials{
+    display:flex;
+    justify-content: center;
+    gap: 1rem;
+    background: 'black';
+}
+
+.footer__socials a{
+    color:DodgerBlue;
+    padding:2rem;
+    border-radius: 0.5rem;
+    display: flex;  
+}
+
+.footer__socials a:hover{
+    border-color:'blue';
+}
+
+.footer__copyright{
+    margin-bottom: 0rem;
+    text-align: center;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+    
+
+@media screen and (max-width:600px) { 
+    .footer{
+        gap:1.5rem;
+    }
+
+    .footer__socials{
+        margin-bottom: 2.6rem;
+    }
+}

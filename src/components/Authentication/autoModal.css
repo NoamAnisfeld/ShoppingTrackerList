@@ -1,0 +1,14 @@
+.modal{
+    color:gold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.paper{
+    color:gold;
+
+    width:400; 
+    background-color:gray;
+    color: white;
+    border-radius: 10;
+}
