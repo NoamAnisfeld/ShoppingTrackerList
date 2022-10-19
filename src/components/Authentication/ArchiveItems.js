@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ArchiveItems = ({addArchive}) => {
+const ArchiveItems = () => {
   return(
     <div>
       <h1>Archive</h1>
         <form>
-          {addArchive}
+          
         </form>
     </div>
   )

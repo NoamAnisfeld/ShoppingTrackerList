@@ -147,13 +147,17 @@ h1 {
 
 .income-list .income-item {
 	position: relative;
+	background-color: rgb(242, 221, 221);
 	padding: 10px 15px;
-	background-color: #FFF;
 	border-radius: 8px;
 	margin-bottom: 15px;
 	display: flex;
 	transition: 0.4s;
 	padding-left: 75px;
+	width: 100%;
+}
+.income-list .income-item:hover{
+	background-image: linear-gradient(to right, var(--primary) 30%, var(--primary) 40%, var(--secondary));
 }
 
 .income-list .income-item .remove-item {
@@ -205,9 +209,10 @@ h1 {
 		min-width:25%;
 	}
 	.income-list{
-		min-width: 50%;
+		min-width: 100%;
 		font-size: 0.650em;
 	}
+	
 }
 /* ================= Media Queries Small ================= */
 @media screen and (max-width:600px) { 
@@ -228,8 +233,12 @@ h1 {
 		font-size: 0.650em;
 	}
 	.income-list{
-		width:80%;
+		width:140%;
 		font-size: 0.650em;
+		margin-left:-70px;
+	}
+	.income-item{
+		width:140%;
 	}
 	
 	
