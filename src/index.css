@@ -22,7 +22,9 @@ input, button {
 }
 
 body {
-	background-color: var(--light);
+	overflow-x:hidden;
+	overflow-x:hidden;
+
 }
 
 .App {
@@ -209,8 +211,9 @@ h1 {
 		min-width:25%;
 	}
 	.income-list{
-		min-width: 100%;
+		width:140%;
 		font-size: 0.650em;
+		margin-left:-70px;
 	}
 	
 }
