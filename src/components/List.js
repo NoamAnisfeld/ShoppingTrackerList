@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const List = ({totalIncome}) => {
+const List = ({ totalIncome }) => {
   return (
     <div>
-        <h1>Shopping Tracker List</h1>
-        <div className="total-income">{totalIncome}$</div>
+      <div className="total-income">
+        <h1 style={{ textAlign: "center" }}>Total Price {totalIncome}$</h1>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;

@@ -1,12 +1,13 @@
 import React from "react";
 import "../index.css";
 
-function Item({ income, index, removeIncome, addArchive }) {
+function Item({ income, index, removeIncome, addArchive,...props}) {
   let date = new Date(income.date);
   let day = date.getDate();
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
 
+  
   const removeHandle = (i) => {
     removeIncome(i);
   };
@@ -14,17 +15,20 @@ function Item({ income, index, removeIncome, addArchive }) {
   const archiveHandle = (i) => {
     addArchive(i);
   };
+  
 
   return (
     <div className="income-item">
-      <button className="remove-item" onClick={() => removeHandle(index)}>
+      {props.showButton &&
+        <button className="remove-item" onClick={() => removeHandle(index)}>
         x
-      </button>
+      </button>}
         <div className="itemName">{income.itemName}</div>
         <div className="store">{income.store}</div>
         <div className="price">{income.price}$</div>
         <div className="date">{day + "/" + month + "/" + year}</div>
-        <button className="archive" onClick={()=> archiveHandle(index)}>Archive</button>
+        { props.showButton && 
+        <button className="archive" onClick={()=> archiveHandle(index)}>Archive</button>}
     </div>
   );
 }

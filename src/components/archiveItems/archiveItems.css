@@ -158,12 +158,12 @@ h1 {
 	color: #FFF;
 }
 
-.income-list {
+.archive-list {
 	padding: 15px;
 	width:100%;
 }
 
-.income-list .income-item {
+.archive-list .income-item {
 	position: relative;
 	background-color: rgb(242, 221, 221);
 	padding: 10px 15px;
@@ -174,11 +174,11 @@ h1 {
 	padding-left: 75px;
 	width: 100%;
 }
-.income-list .income-item:hover{
+.archive-list .income-item:hover{
 	background-image: linear-gradient(to right, var(--primary) 30%, var(--primary) 40%, var(--secondary));
 }
 
-.income-list .income-item .remove-item {
+.archive-list .income-item .remove-item {
 	position: absolute;
 	width: 0;
 	top: 0;
@@ -195,20 +195,20 @@ h1 {
 	transition: 0.2s;
 }
 
-.income-list .income-item:hover .remove-item {
+.archive-list .income-item:hover .remove-item {
 	width: 50px;
 }
 
-.income-list .income-item .itemName {
+.archive-list .income-item .itemName {
 	flex: 1 1 100%;
 }
 
-.income-list .income-item .price,
-.income-list .income-item .date {
+.archive-list .income-item .price,
+.archive-list .income-item .date {
 	min-width: 125px;
 }
 
-.income-list .income-item:hover {
+.archive-list .income-item:hover {
 	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
 }
 
@@ -226,14 +226,11 @@ h1 {
 	.form-inner input[type="number"]{
 		min-width:25%;
 	}
-	.income-list{
+	.archive-list{
 		width:140%;
 		font-size: 0.650em;
 		margin-left:-70px;
 	}
-	.modal{
-        display: none;
-    } 
 	 
 }
 /* ================= Media Queries Small ================= */
@@ -254,13 +251,13 @@ h1 {
 		min-width:25%;
 		font-size: 0.650em;
 	}
-	.income-list{
-		width:140%;
+	.archive-list{
+		width:130%;
 		font-size: 0.650em;
 		margin-left:-70px;
 	}
 	.income-item{
-		width:130%;
+		width:140%;
 	}
 	.income-form{
 		font-size:100%;

@@ -1,27 +1,28 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut,
 } from "firebase/auth";
 import { auth } from '../../firebase-config';
 import { Box } from "@mui/system";
 import { Button, TextField } from "@material-ui/core";
 import { useEffect } from "react";
-import { setUseProxies } from "immer";
 
 function Login({handleClose}) {
   // Know what the user wrote
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [alert, setAlert] = useState("");
-  const [user, setUser] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [ alert,setAlert] = useState("");
+  const [ user,setUser] = useState(null);
 
   useEffect(()=>{
     onAuthStateChanged(auth,user=>{
       if(user) setUser(user);
       else setUser(null);
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
  

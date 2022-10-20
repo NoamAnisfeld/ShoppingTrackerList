@@ -54,8 +54,8 @@ body{
 }
 .ul__nav{
   margin:1rem;
-
 }
+
 
 
 @media screen and (max-width:1024px) {
@@ -68,4 +68,5 @@ body{
   .nav{
       height:10vh;
   }
+  
 } 

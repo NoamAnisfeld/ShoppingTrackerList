@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const ItemsReducer = createSlice({
   name: "items",
-  initialState: { value: [] },
+  initialState: { 
+    value: [],
+  },
 
   reducers: {
     setArchive: (state, action) => {

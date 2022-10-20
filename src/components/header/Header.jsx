@@ -5,24 +5,24 @@ import AutoModal from "../Authentication/AutoModal";
 
 function Header(user) {
   return (
-      <AppBar color="transparent" position="static">
-        <Container>
-          <Toolbar>
-            <Link to="/" className="logo">
-              Tracker List
-            </Link>
-            <div>
-              <nav className="nav__container">
-                <ul className="ul__nav">
-                  <Link to="/about">About</Link>
-                  <Link to="/archive">Archive</Link>
-                </ul>
-              </nav>
-            </div>
-            {user?<AutoModal /> : <AutoModal/>}
-          </Toolbar>
-        </Container>
-      </AppBar>
+    <AppBar color="transparent" position="static">
+      <Container>
+        <Toolbar>
+          <Link to="/" className="logo">
+            Tracker List
+          </Link>
+          <div>
+            <nav className="nav__container">
+              <ul className="ul__nav">
+                <Link to="/about">Contact</Link>
+                <Link to="/archive">Archive</Link>
+              </ul>
+            </nav>
+          </div>
+          {user ? <AutoModal /> : <AutoModal />}
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
 

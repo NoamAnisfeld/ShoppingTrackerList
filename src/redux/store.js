@@ -5,6 +5,7 @@ import ItemsReducer from './itemsRedux/itemSlice';
 export default configureStore({
   reducer: {
     items: ItemsReducer,
+    archiveItems: ItemsReducer,
   },
   
 })

@@ -4,8 +4,7 @@ import Home from "./pages/Home";
 import {Route , Routes} from 'react-router-dom';
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import ArchiveItems from "./components/Authentication/ArchiveItems";
-
+import ArchiveItems from './components/archiveItems/ArchiveItems';
 function App() {
   
   return (
