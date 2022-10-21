@@ -5,8 +5,8 @@ import Modal from "@mui/material/Modal";
 import { AppBar } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Login from "../../components/Authentication/Login";
-import Register from "../../components/Authentication/Register";
+import Login from "./Login";
+import Register from "./Register";
 import './autoModal.css';
 import GoogleButton from "react-google-button";
 import { auth } from "../../firebase-config";
@@ -24,7 +24,7 @@ const style = {
   p: 2,
 };
 
-function AutoModal() {
+function AuthModal() {
   const [value, setValue] = React.useState("one");
 
   const handleChange = (event, newValue) => {
@@ -99,4 +99,4 @@ function AutoModal() {
     </div>
   );
 }
-export default AutoModal;
+export default AuthModal;

@@ -1,7 +1,8 @@
 import "./header.css";
 import { AppBar, Container, Toolbar } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import AutoModal from "../Authentication/AutoModal";
+import UserSidebar from "../Authentication/UserSideBar";
+import AuthModal from "../Authentication/AuthModal";
 
 function Header(user) {
   return (
@@ -19,7 +20,7 @@ function Header(user) {
               </ul>
             </nav>
           </div>
-          {user ? <AutoModal /> : <AutoModal />}
+          {user ? <UserSidebar /> : <AuthModal />}
         </Toolbar>
       </Container>
     </AppBar>
