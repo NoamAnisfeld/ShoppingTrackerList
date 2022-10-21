@@ -3,9 +3,19 @@ import { AppBar, Container, Toolbar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import UserSidebar from "../Authentication/UserSideBar";
 import AuthModal from "../Authentication/AuthModal";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase-config";
 
-function Header(user) {
+function Header() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) setUser(user);
+      else setUser(null);
+    });
+  }, []);
 
   return (
     <AppBar color="transparent" position="static">
@@ -22,7 +32,7 @@ function Header(user) {
               </ul>
             </nav>
           </div>
-          {user ? <AuthModal/> : <AuthModal /> }
+          {user ? <UserSidebar/> : <AuthModal /> }
         </Toolbar>
       </Container>
     </AppBar>
