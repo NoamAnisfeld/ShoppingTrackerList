@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useState } from "react";
-import Item from "./Item";
+import Item from "../Item/Item";
+
 
 function List2({ income, setIncome }) {
   const [visible, setVisible] = useState(5);
@@ -23,7 +24,7 @@ function List2({ income, setIncome }) {
     );
   };
 
-  const sortByDate = (a, b) =>  { debugger
+  const sortByDate = (a, b) =>  { 
     return b.date - a.date;
   };
 

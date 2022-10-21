@@ -59,8 +59,6 @@ export default function UserSidebar(user) {
   const logOut = async () => {
     signOut(auth);
     alert("LogOut Successful !");
-    
-
     toggleDrawer();
   };
 

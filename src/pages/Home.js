@@ -4,10 +4,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable array-callback-return */
 import "../index.css";
-import List from "../components/List";
-import Form from "../components/Form";
+import List from "../components/List/List";
+import Form from "../components/Form/Form";
 import { useEffect, useState } from "react";
-import List2 from "../components/List2";
+import List2 from "../components/List2/List2";
 import axios from "axios";
 import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";

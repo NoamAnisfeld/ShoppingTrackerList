@@ -20,9 +20,6 @@
     --container-width-md:86%;
     --container-width-sm:90%;
 }
-body {
-	overflow-x: hidden;
-  }  
 
 * {
 	margin: 0;
@@ -173,6 +170,7 @@ h1 {
 	transition: 0.4s;
 	padding-left: 75px;
 	width: 100%;
+	
 }
 .income-list .income-item:hover{
 	background-image: linear-gradient(to right, var(--primary) 30%, var(--primary) 40%, var(--secondary));
@@ -201,6 +199,8 @@ h1 {
 
 .income-list .income-item .itemName {
 	flex: 1 1 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .income-list .income-item .price,
@@ -211,10 +211,7 @@ h1 {
 .income-list .income-item:hover {
 	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
 }
-.income-item{
-	overflow-x: hidden;
 
-}
 .alert {
 	padding: 20px;
 	background-color: #f44336;
@@ -240,17 +237,17 @@ h1 {
 		font-size: 0.650em;
 	}
 	.income-list{
-		width:140%;
-		font-size: 0.650em;
-		margin-left:-70px;
+		width:100%;
+		font-size: 0.650em;	
 	}
 	.income-item{
 		width:100%;
+		font-size: 0.650em;	
+		justify-content: center;
+		align-items: center;
 	}
 	.income-form{
 		font-size:100%;
 	}
-	.modal{
-        display: none;
-    }	
+		
 }

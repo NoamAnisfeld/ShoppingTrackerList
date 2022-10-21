@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React from "react";
-import Item from '../Item'; 
+import Item from '../Item/Item'; 
 import { useSelector } from "react-redux";
 import '../../components/archiveItems/archiveItems.css';
 

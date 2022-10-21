@@ -1,5 +1,4 @@
 import React from "react";
-import "../index.css";
 
 function Item({ income, index, removeIncome, addArchive, ...props }) {
   let date = new Date(income.date);

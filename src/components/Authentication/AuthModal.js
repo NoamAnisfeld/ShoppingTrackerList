@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
@@ -25,13 +25,13 @@ const style = {
 };
 
 function AuthModal() {
-  const [value, setValue] = React.useState("one");
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);

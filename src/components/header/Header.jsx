@@ -3,8 +3,10 @@ import { AppBar, Container, Toolbar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import UserSidebar from "../Authentication/UserSideBar";
 import AuthModal from "../Authentication/AuthModal";
+import { useState } from "react";
 
 function Header(user) {
+
   return (
     <AppBar color="transparent" position="static">
       <Container>
@@ -20,7 +22,7 @@ function Header(user) {
               </ul>
             </nav>
           </div>
-          {user ? <UserSidebar /> : <AuthModal />}
+          {user ? <AuthModal/> : <AuthModal /> }
         </Toolbar>
       </Container>
     </AppBar>

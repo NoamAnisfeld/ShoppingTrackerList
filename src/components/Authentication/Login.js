@@ -25,13 +25,11 @@ function Login({handleClose}) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
- 
   const handleSubmit = async () => {
     if (!email || !password) {
       alert("Please fill all the Fields")
       return;
     }
-
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       alert(`Sign Up Successful. Welcome ${result.user.email}`)
