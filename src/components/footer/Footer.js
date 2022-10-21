@@ -26,19 +26,6 @@ function Footer() {
   
   return (
     <div className="footer reveal">
-      {/* <Routes className="route">
-        <Route path="/upCoins" element={<UpCoins />} />
-      </Routes>
-
-      <div className="permalinks">
-        <a href="/upCoins">Up Coins </a>
-        <a href="./downCoins">Down Coins</a>
-        <a href="./about">Contact</a>
-        <a href="./register">Register</a>
-        <a href="./login">Login</a>
-      </div> */}
-      
-
       <div className="footer__socials reveal">
         <a
           href="https://www.facebook.com/profile.php?id=100000848391807"
@@ -60,7 +47,7 @@ function Footer() {
       </div>
 
       <div className="footer__copyright reveal">
-        <small>
+        <small style={{color:'white'}}>
           We endeavor to publish and maintain accurate information on external
           listings,
           <br></br>but we do not guarantee accuracy,
@@ -75,11 +62,11 @@ function Footer() {
         </small>
         <small>
         <div style={{color:'gray'}}>
-        <h4>This page was viewed</h4>
+        <h4 >This page was viewed</h4>
         <h2 id="count">0</h2>
         <h4>times</h4>
         </div>
-          &copy; All Rights Reserved by Ohad{" "}
+          <p style={{color:'white'}}>&copy; All Rights Reserved by Ohad{" "}</p>
         </small>
       </div>
     </div>

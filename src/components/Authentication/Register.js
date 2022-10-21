@@ -2,27 +2,18 @@ import React, { useState } from "react";
 import { auth } from "../../firebase-config";
 import { Box } from "@mui/system";
 import { Button, TextField } from "@material-ui/core";
-import {createUserWithEmailAndPassword,} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-function Register({ handleClose}) {
+
+function Register({ handleClose }) {
   // Know what the user wrote
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [setAlert] = useState({
-    open: false,
-    message: "",
-    type: "success",
-  });
-
   const handleSubmit = async () => {
     if (password !== confirmPassword) {
-      setAlert({
-        open: true,
-        message: "Passwords do not match",
-        type: "error",
-      });
+      alert("The passwords do not match")
       return;
     }
 
@@ -32,19 +23,10 @@ function Register({ handleClose}) {
         email,
         password
       );
-      setAlert({
-        open: true,
-        message: `Sign Up Successful. Welcome ${result.user.email}`,
-        type: "success",
-      });
-
+      alert(`Sign Up Successful. Welcome ${result.user.email}`);
       handleClose();
     } catch (error) {
-      setAlert({
-        open: true,
-        message: error.message,
-        type: "error",
-      });
+      alert("Error");
       return;
     }
   };
@@ -85,7 +67,7 @@ function Register({ handleClose}) {
       <Button
         variant="contained"
         size="large"
-        style={{ backgroundColor:'gold' }}
+        style={{ backgroundColor: "gold" }}
         onClick={handleSubmit}
       >
         Register

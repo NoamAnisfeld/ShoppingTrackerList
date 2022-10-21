@@ -23,15 +23,15 @@ function List2({ income, setIncome }) {
     );
   };
 
-  const sortByDate = (a, b) =>  {
+  const sortByDate = (a, b) =>  { debugger
     return b.date - a.date;
   };
 
   return (
     <div className="income-list">
       {income
-        .slice(0, visible)
-        .sort(sortByDate)
+        .slice(0,visible)      
+        .sort(sortByDate) 
         .map(
           (value, index) =>
             value.isArchive === false && (

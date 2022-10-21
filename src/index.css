@@ -20,14 +20,17 @@
     --container-width-md:86%;
     --container-width-sm:90%;
 }
+body {
+	overflow-x: hidden;
+  }  
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: montserrat, sans-serif;
-}
 
+}
 
 input, button {
 	border: none;
@@ -35,9 +38,6 @@ input, button {
 	background: none;
 }
 
-/* body {
-	overflow-x:hidden;
-} */
 
 .App {
 	padding: 30px;
@@ -211,31 +211,16 @@ h1 {
 .income-list .income-item:hover {
 	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
 }
+.income-item{
+	overflow-x: hidden;
 
-/* ================= Media Queries Medium ================= */
-@media screen and (max-width:1024px) {
-	.form-inner input[type="date"]{
-		min-width:25%;	
-	}
-	.form-inner input[type="text"]{
-		min-width:25%;
-	}
-	.form-inner input[type="submit"]{
-		min-width:20%;
-	}
-	.form-inner input[type="number"]{
-		min-width:25%;
-	}
-	.income-list{
-		width:140%;
-		font-size: 0.650em;
-		margin-left:-70px;
-	}
-	.modal{
-        display: none;
-    } 
-	 
 }
+.alert {
+	padding: 20px;
+	background-color: #f44336;
+	color: white;
+  }
+
 /* ================= Media Queries Small ================= */
 @media screen and (max-width:600px) { 
 	.form-inner input[type="date"]{
@@ -260,14 +245,12 @@ h1 {
 		margin-left:-70px;
 	}
 	.income-item{
-		width:130%;
+		width:100%;
 	}
 	.income-form{
 		font-size:100%;
 	}
 	.modal{
         display: none;
-    }   
-	
+    }	
 }
-    

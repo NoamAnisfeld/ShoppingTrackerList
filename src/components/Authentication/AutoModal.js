@@ -8,6 +8,9 @@ import Tab from "@mui/material/Tab";
 import Login from "../../components/Authentication/Login";
 import Register from "../../components/Authentication/Register";
 import './autoModal.css';
+import GoogleButton from "react-google-button";
+import { auth } from "../../firebase-config";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const style = {
   position: "absolute",
@@ -27,10 +30,30 @@ function AutoModal() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  console.log(value);
+
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const googleProvider = new GoogleAuthProvider();
+
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((res) => {
+        alert(`Sign Up Successful. Welcome ${res.user.email}`)
+        handleClose();
+      })
+      .catch((error) => {
+        alert(error.message)
+        return;
+      });
+  };
 
   return (
     <div className="header">
@@ -57,12 +80,19 @@ function AutoModal() {
               indicatorColor="secondary"
               aria-label="secondary tabs example"
             >
-              <Tab  label="Delivery" />
-              <Tab  label="Archive Items" />
+              <Tab  label="Login" />
+              <Tab  label="Register" />
             </Tabs>
           </AppBar>
           {value === 0 && <Login handleClose={handleClose}/>}
           {value === 1 && <Register handleClose={handleClose}/>}
+          <Box className="google">
+            <span style={{color:'black'}}>OR</span>
+              <GoogleButton
+                style={{width:'100%',outlined:'none'}}
+                onClick={signInWithGoogle}
+              />
+          </Box>
         </Box>
         </div>
       </Modal>

@@ -12,25 +12,28 @@ import axios from "axios";
 import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";
 
-const Home = () => {
+function Home (){
+
   const items = useSelector((state) => state.items.value);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products").then((response) => {
+    if(items.length === 0){
+      axios.get("https://fakestoreapi.com/products").then((response) => {
       const arr = response.data.map((item) => {
         return {
           ...item,
           isArchive: false,
-          date: "10/10/2021",
+          date: (new Date("10/10/2020")).getTime(),
           store: "store",
           itemName: "Item Name",
         };
       });
       dispatch(setItems(arr));
       console.log(arr);
-    });
-  }, []);
+    }).catch(err => { console.log("The Api is failed , Please fix it",err) })
+    }
+},[]);
 
   const [totalIncome, setTotalIncome] = useState(0);
 
@@ -53,7 +56,6 @@ const Home = () => {
         income={items}
         setIncome={(data) => dispatch(setItems(data))}
       />
-      
     </div>
   );
 };

@@ -28,29 +28,16 @@ function Login({handleClose}) {
  
   const handleSubmit = async () => {
     if (!email || !password) {
-      setAlert({
-        open: true,
-        message: "Please fill all the Fields",
-        type: "error",
-      });
+      alert("Please fill all the Fields")
       return;
     }
 
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
-      setAlert({
-        open: true,
-        message: `Sign Up Successful. Welcome ${result.user.email}`,
-        type: "success",
-      });
-
+      alert(`Sign Up Successful. Welcome ${result.user.email}`)
       handleClose();
     } catch (error) {
-      setAlert({
-        open: true,
-        message: error.message,
-        type: "error",
-      });
+      alert("Error")
       return;
     }
   };
