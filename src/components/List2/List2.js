@@ -1,13 +1,14 @@
 /* eslint-disable no-undef */
-import React, { useState } from "react";
+import React ,{useState} from "react";
 import Item from "../Item/Item";
 
 
 function List2({ income, setIncome }) {
+
   const [visible, setVisible] = useState(5);
 
   const showMoreItems = () => {
-    setVisible((prevValue) => prevValue + 3);
+    setVisible((prevValue) => prevValue + 1);
   };
 
   const removeIncome = (i) => {
@@ -30,11 +31,7 @@ function List2({ income, setIncome }) {
 
   return (
     <div className="income-list">
-      {income
-        .slice(0,visible)      
-        .sort(sortByDate) 
-        .map(
-          (value, index) =>
+      {income.slice(0,visible).sort(sortByDate).map((value,index) =>
             value.isArchive === false && (
               <Item
                 key={index}

@@ -11,20 +11,19 @@ import List2 from "../components/List2/List2";
 import axios from "axios";
 import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";
-
 function Home (){
-
+  
   const items = useSelector((state) => state.items.value);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if(items.length === 0){
-      axios.get("https://fakestoreapi.com/products").then((response) => {
+      axios.get("https://fakestoreapi.com/products?limit=5").then((response) => {
       const arr = response.data.map((item) => {
         return {
           ...item,
           isArchive: false,
-          date: (new Date("10/10/2020")).getTime(),
+          date: "10/10/2020",
           store: "store",
           itemName: "Item Name",
         };
@@ -52,7 +51,6 @@ function Home (){
       <List totalIncome={totalIncome} />
       <Form income={items} setIncome={(data) => dispatch(setItems(data))} />
       <List2
-        className="list2"
         income={items}
         setIncome={(data) => dispatch(setItems(data))}
       />

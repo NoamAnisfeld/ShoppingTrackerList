@@ -1,0 +1,19 @@
+.total-income{
+    width: 100%;
+}
+@media screen and (max-width:600px) { 
+	.total-income{
+        width:100%;
+        
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .total-income-text{
+        font-size:15px;
+        color:black;
+        font-weight:500;
+    }
+    
+	
+}

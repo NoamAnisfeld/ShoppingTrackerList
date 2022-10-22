@@ -1,10 +1,11 @@
 import React from "react";
+import './list.css';
 
 const List = ({ totalIncome }) => {
   return (
     <div>
       <div className="total-income">
-        <h1 style={{ textAlign: "center" }}>Total Price {totalIncome}$</h1>
+        <p className="total-income-text">Total Price {totalIncome}$</p>
       </div>
     </div>
   );

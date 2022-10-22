@@ -6,8 +6,9 @@ import {
 } from "firebase/auth";
 import { auth } from '../../firebase-config';
 import { Box } from "@mui/system";
-import { Button, TextField } from "@material-ui/core";
+import { Button, FormControlLabel, TextField } from "@material-ui/core";
 import { useEffect } from "react";
+import Checkbox from '@mui/material/Checkbox';
 
 function Login({handleClose}) {
   // Know what the user wrote
@@ -16,6 +17,7 @@ function Login({handleClose}) {
   // eslint-disable-next-line no-unused-vars
   const [ alert,setAlert] = useState("");
   const [ user,setUser] = useState(null);
+  const [ rememberMe,setRememberMe] = useState(false);
 
   useEffect(()=>{
     onAuthStateChanged(auth,user=>{
@@ -39,6 +41,10 @@ function Login({handleClose}) {
       return;
     }
   };
+
+  const handleCheck = (event) => {
+    setRememberMe(event.target.checked);
+}
 
   return (
     <Box
@@ -73,6 +79,16 @@ function Login({handleClose}) {
       >
         Login
       </Button>
+      <FormControlLabel style={{color:'black'}}
+        control={
+          <Checkbox
+            value={rememberMe}
+            onChange={(e) => handleCheck(e)}
+            color="primary"
+          />
+        }
+        label="Remember Me"
+      />
     </Box>
   );
 }
