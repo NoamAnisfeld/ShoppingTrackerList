@@ -14,3 +14,16 @@ The site is fully responsive for all devices,
 
 I used Redux for State Management
 
+#### On a computer screen:
+<img src='./src/assets/2.png' width="300"/>
+
+#### On Mobile :
+<img src='./src/assets/1.png' width="300"/>
+
+#### Login & Register
+<img src='./src/assets/3.png' width="300"/>
+
+<img src='./src/assets/4.png' width="300"/>
+
+#### Archive Items
+<img src='./src/assets/5.png' width="300"/>

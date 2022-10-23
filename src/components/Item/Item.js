@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import row from '../../assets/arrow-down-mint.svg';
 
 function Item({ income, index, removeIncome, addArchive, ...props }) {
   let date = new Date(income.date);
@@ -35,6 +37,7 @@ function Item({ income, index, removeIncome, addArchive, ...props }) {
           }}
         >
           <motion.h5 className="item-name" layout="position">{income.itemName}</motion.h5>
+          <img src={row} alt="Row" className="row-image"/>
           {isOpen === true && (
             <motion.div className="expand">
               <small>{income.store}</small>
