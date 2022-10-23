@@ -39,6 +39,7 @@ input, button {
 .App {
 	padding: 30px;
 	color:black;
+	overflow-x: hidden;
 	
 }
 
@@ -286,11 +287,11 @@ h1 {
 	}
 }
 
-
 @media screen and (min-width:600px) { 
 	.income-item1 .income-item2{
 		display: none;
 	}
+
 }
 
 @media screen and (min-width:1200px) { 
