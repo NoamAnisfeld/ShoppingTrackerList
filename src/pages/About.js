@@ -25,8 +25,8 @@ function About() {
   return (
     <div>
       <section id="contact">
-        <h5>Get In Touch</h5>
-        <h2>Contact Me!</h2>
+        <h5 style={{color:'white'}}>Get In Touch</h5>
+        <h2 style={{color:'white'}}>Contact Me!</h2>
 
         <div className="container contact__container">
           <div className="contact__options">
