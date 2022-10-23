@@ -9,9 +9,7 @@ function Register({ handleClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [rememberme, setRememberMe] = useState(false);
 
-  
 
   const handleSubmit = async () => {
     if (password !== confirmPassword) {
