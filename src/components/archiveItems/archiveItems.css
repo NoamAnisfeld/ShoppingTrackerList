@@ -235,36 +235,29 @@ h1 {
 }
 /* ================= Media Queries Small ================= */
 @media screen and (max-width:600px) { 
-	.form-inner input[type="date"]{
-		min-width:39%;	
-		font-size: 0.750em;
-	}
-	.form-inner input[type="text"]{
-		min-width:25%;
-		font-size: 0.650em;
-	}
-	.form-inner input[type="submit"]{
-		min-width:30%;
-		font-size: 0.650em;
-	}
-	.form-inner input[type="number"]{
-		min-width:25%;
-		font-size: 0.650em;
-	}
-	.archive-list{
-		width:130%;
-		font-size: 0.650em;
-		margin-left:-70px;
-	}
 	.income-item{
-		width:140%;
+		width:100%;
 	}
 	.income-form{
-		font-size:100%;
+		font-size:20%;
 	}
-	.modal{
-        display: none;
-    }   
 	
 }
-    
+@media screen and (max-width:600px) { 
+	.income-item1 .income-item{
+		display: none;
+		width:20%;
+	}
+}
+@media screen and (min-width:600px) { 
+	.income-item1 .income-item2{
+		display: none;
+		
+	}
+}
+
+@media screen and (min-width:1200px) { 
+	.income-item1 .income-item2{
+		display: none;
+	}
+}

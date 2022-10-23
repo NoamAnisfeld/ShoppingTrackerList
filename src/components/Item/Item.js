@@ -37,9 +37,9 @@ function Item({ income, index, removeIncome, addArchive, ...props }) {
           <motion.h3 layout="position">{income.itemName}</motion.h3>
           {isOpen === true && (
             <motion.div className="expand">
-              <p className="store">{income.store}</p>
-              <p className="price">{income.price}$</p>
-              <p className="date">{day + "/" + month + "/" + year}</p>
+              <p>{income.store}</p>
+              <p>{income.price}$</p>
+              <p>{day + "/" + month + "/" + year}</p>
               {props.showButton && (
                 <button
                   className="archive"
@@ -60,9 +60,9 @@ function Item({ income, index, removeIncome, addArchive, ...props }) {
           </button>
         )}
         <button className="itemName">{income.itemName}</button>
-        <p className="store">{income.store}</p>
-        <p className="price">{income.price}$</p>
-        <p className="date">{day + "/" + month + "/" + year}</p>
+        <div className="store">{income.store}</div>
+        <div className="price">{income.price}$</div>
+        <div className="date">{day + "/" + month + "/" + year}</div>
         {props.showButton && (
           <button className="archive" onClick={() => archiveHandle(index)}>
             Archive
