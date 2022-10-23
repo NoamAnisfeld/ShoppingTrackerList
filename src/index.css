@@ -38,9 +38,7 @@ input, button {
 
 .App {
 	padding: 30px;
-	color:black;
-	overflow-x: hidden;
-	
+	color:black;	
 }
 
 header {
@@ -63,8 +61,6 @@ h1 {
 	background-color: #DFDFDF;
 	padding: 5px 25px;
 	border-radius: 8px;
-
-
 }
 
 .income-form {
@@ -196,7 +192,6 @@ h1 {
 
 }
 
-
 .income-list .income-item:hover .remove-item {
 	width: 50px;
 }
@@ -246,6 +241,14 @@ h1 {
 	cursor: pointer;
 	font-weight: 700;
 }
+ .item-name{
+	width: 100%;
+	font-size:11px;
+	font-weight:700;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
 
 @media screen and (max-width:1024px) { 
 	.income-item{
@@ -291,7 +294,6 @@ h1 {
 	.income-item1 .income-item2{
 		display: none;
 	}
-
 }
 
 @media screen and (min-width:1200px) { 

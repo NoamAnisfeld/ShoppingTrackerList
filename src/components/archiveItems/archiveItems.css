@@ -235,12 +235,7 @@ h1 {
 }
 /* ================= Media Queries Small ================= */
 @media screen and (max-width:600px) { 
-	.income-item{
-		width:100%;
-	}
-	.income-form{
-		font-size:20%;
-	}
+	
 	
 }
 @media screen and (max-width:600px) { 
