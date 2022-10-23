@@ -14,18 +14,18 @@ I used Redux to manage the state, and to manage the data that goes out to the "a
 
 #### On a computer screen
 
-<img src='./src/assets/2.png' width="300" />
+<img src='./src/assets/2.png' width="500" />
 
 #### On Mobile
 
-<img src='./src/assets/1.png' width="300"/>
+<img src='./src/assets/1.png' width="500"/>
 
 #### Login & Register
 
-<img src='./src/assets/3.png' width="300"/>
+<img src='./src/assets/3.png' width="500"/>
 
-<img src='./src/assets/4.png' width="300"/>
+<img src='./src/assets/4.png' width="500"/>
 
 #### Archive Items
 
-<img src='./src/assets/5.png' width="300"/>
+<img src='./src/assets/5.png' width="500"/>
