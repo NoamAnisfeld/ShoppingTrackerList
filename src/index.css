@@ -278,7 +278,15 @@ h1 {
 	.income-item1 .income-item{
 		display: none;
 	}
+	.form-inner{
+		width:120%;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
 }
+
+
 @media screen and (min-width:600px) { 
 	.income-item1 .income-item2{
 		display: none;
@@ -289,5 +297,6 @@ h1 {
 	.income-item1 .income-item2{
 		display: none;
 	}
+	
 }
 

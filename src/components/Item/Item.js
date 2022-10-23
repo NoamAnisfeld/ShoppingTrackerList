@@ -34,7 +34,7 @@ function Item({ income, index, removeIncome, addArchive, ...props }) {
             boxShadow: "0px 10px 30px rgba(0,0,0,0.5)",
           }}
         >
-          <motion.h5 layout="position">{income.itemName}</motion.h5>
+          <motion.h5 className="item-name" layout="position">{income.itemName}</motion.h5>
           {isOpen === true && (
             <motion.div className="expand">
               <small>{income.store}</small>
