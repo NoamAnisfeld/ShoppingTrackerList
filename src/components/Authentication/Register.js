@@ -3,17 +3,23 @@ import { auth } from "../../firebase-config";
 import { Box } from "@mui/system";
 import { Button, TextField } from "@material-ui/core";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { CryptoState } from '../../CryptoContext';
 
-function Register({ handleClose }) {
+function Register({ handleClose}) {
   // Know what the user wrote
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const { setAlert } = CryptoState();
 
   const handleSubmit = async () => {
     if (password !== confirmPassword) {
-      alert("The passwords do not match");
+      setAlert({
+        open: true,
+        message: "Passwords do not match",
+        type: "error",
+      });
       return;
     }
 
@@ -23,16 +29,23 @@ function Register({ handleClose }) {
         email,
         password
       );
-      alert(`Sign Up Successful. Welcome ${result.user.email}`);
+      setAlert({
+        open: true,
+        message: `Sign Up Successful. Welcome ${result.user.email}`,
+        type: "success",
+      });
       handleClose();
     } catch (error) {
-      alert("Error");
+      setAlert({
+        open: true,
+        message: error.message,
+        type: "error",
+      });
       return;
     }
   };
 
  
-
   return (
     <Box
       p={3}

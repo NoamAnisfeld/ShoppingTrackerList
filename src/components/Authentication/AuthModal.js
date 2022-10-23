@@ -10,7 +10,8 @@ import Register from "./Register";
 import './autoModal.css';
 import GoogleButton from "react-google-button";
 import { auth } from "../../firebase-config";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 
 const style = {
   position: "absolute",
@@ -45,6 +46,20 @@ function AuthModal() {
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
+      .then((res) => {
+        alert(`Sign Up Successful. Welcome ${res.user.email}`)
+        handleClose();
+      })
+      .catch((error) => {
+        alert(error.message)
+        return;
+      });
+  };
+
+  const githubProvider = new GithubAuthProvider();
+
+  const signInWithGitHub = () => {
+    signInWithPopup(auth, githubProvider)
       .then((res) => {
         alert(`Sign Up Successful. Welcome ${res.user.email}`)
         handleClose();
@@ -93,7 +108,7 @@ function AuthModal() {
                 onClick={signInWithGoogle}
               />
           </Box>
-        </Box>
+        </Box>  
         </div>
       </Modal>
     </div>

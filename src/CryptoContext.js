@@ -1,18 +1,22 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const Crypto = createContext();
 
 const CryptoContext = ({ children }) => {
-  const [currency, setCurrency] = useState("INR");
-  const [symbol, setSymbol] = useState("₹");
-
-  useEffect(() => {
-    if (currency === "INR") setSymbol("₹");
-    else if (currency === "USD") setSymbol("$");
-  }, [currency]);
+  
+  const [alert, setAlert] = useState({
+    open: false,
+    message: "",
+    type: "success",
+  });
 
   return (
-    <Crypto.Provider value={{ currency, setCurrency, symbol }}>
+    <Crypto.Provider
+      value={{
+        alert,
+        setAlert,
+      }}
+    >
       {children}
     </Crypto.Provider>
   );

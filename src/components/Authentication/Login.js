@@ -9,15 +9,17 @@ import { Box } from "@mui/system";
 import { Button, FormControlLabel, TextField } from "@material-ui/core";
 import { useEffect } from "react";
 import Checkbox from '@mui/material/Checkbox';
+import { CryptoState } from '../../CryptoContext';
 
 function Login({handleClose}) {
   // Know what the user wrote
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // eslint-disable-next-line no-unused-vars
-  const [ alert,setAlert] = useState("");
   const [ user,setUser] = useState(null);
   const [ rememberMe,setRememberMe] = useState(false);
+
+  const {setAlert} = CryptoState();
 
   useEffect(()=>{
     onAuthStateChanged(auth,user=>{
@@ -29,15 +31,27 @@ function Login({handleClose}) {
 
   const handleSubmit = async () => {
     if (!email || !password) {
-      alert("Please fill all the Fields")
+      setAlert({
+        open: true,
+        message: "Please fill all the Fields ",
+        type: "error",
+      });
       return;
     }
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
-      alert(`Sign Up Successful. Welcome ${result.user.email}`)
+      setAlert({
+        open: true,
+        message: `Login is Successful . Welcome ${result.user.email}`,
+        type: "success",
+      });
       handleClose();
     } catch (error) {
-      alert("Error")
+      setAlert({
+        open: true,
+        message: error.message,
+        type: "error",
+      });
       return;
     }
   };

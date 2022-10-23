@@ -5,6 +5,8 @@ import {Route , Routes} from 'react-router-dom';
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import ArchiveItems from './components/archiveItems/ArchiveItems';
+import Alert from './components/Alert';
+
 function App() {
   
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route path="/archive" element= {<ArchiveItems/>} />
         </Routes>
       </div>
+      <Alert/>
       <Footer/>
     </div>
   );
