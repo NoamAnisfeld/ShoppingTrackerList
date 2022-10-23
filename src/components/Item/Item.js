@@ -34,12 +34,15 @@ function Item({ income, index, removeIncome, addArchive, ...props }) {
             boxShadow: "0px 10px 30px rgba(0,0,0,0.5)",
           }}
         >
-          <motion.h3 layout="position">{income.itemName}</motion.h3>
+          <motion.h5 layout="position">{income.itemName}</motion.h5>
           {isOpen === true && (
             <motion.div className="expand">
-              <p>{income.store}</p>
-              <p>{income.price}$</p>
-              <p>{day + "/" + month + "/" + year}</p>
+              <small>{income.store}</small>
+              <br></br>
+              <small>{income.price}$</small>
+              <br></br>
+              <small>{day + "/" + month + "/" + year}</small>
+              <br></br>
               {props.showButton && (
                 <button
                   className="archive"
