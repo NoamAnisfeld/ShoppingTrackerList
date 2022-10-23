@@ -88,6 +88,7 @@ export default function UserSidebar(user) {
                   className={classes.picture}
                   src={user.photoURL}
                   alt={user.displayName || user.email}
+                 
                 />
                 <span
                   style={{

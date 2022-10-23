@@ -67,6 +67,7 @@ function Login({handleClose}) {
         display: "flex",
         flexDirection: "column",
         gap: "20px",
+        color:'white',
       }}
     >
       <TextField

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React ,{useState} from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -10,7 +11,7 @@ import Register from "./Register";
 import './autoModal.css';
 import GoogleButton from "react-google-button";
 import { auth } from "../../firebase-config";
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 
 const style = {
@@ -19,11 +20,12 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 350,
-  bgcolor: "white",
+  bgcolor:'white',
   border: "2px solid #000",
-  boxShadow: 24,
-  p: 2,
+  boxShadow: 24, 
+  color:'white',
 };
+
 
 function AuthModal() {
   const [value, setValue] = useState(0);
@@ -56,31 +58,34 @@ function AuthModal() {
       });
   };
 
-  const githubProvider = new GithubAuthProvider();
+  // const githubProvider = new GithubAuthProvider();
 
-  const signInWithGitHub = () => {
-    signInWithPopup(auth, githubProvider)
-      .then((res) => {
-        alert(`Sign Up Successful. Welcome ${res.user.email}`)
-        handleClose();
-      })
-      .catch((error) => {
-        alert(error.message)
-        return;
-      });
-  };
+  // const signInWithGitHub = () => {
+  //   signInWithPopup(auth, githubProvider)
+  //     .then((res) => {
+  //       alert(`Sign Up Successful. Welcome ${res.user.email}`)
+  //       handleClose();
+  //     })
+  //     .catch((error) => {
+  //       alert(error.message)
+  //       return;
+  //     });
+  // };
 
   return (
     <div className="header">
-      <Button className="login" onClick={handleOpen}>
+      <Button onClick={handleOpen} style={{backgroundColor:'#EEBC1D',color:'black'}}>
         Login
       </Button>
       <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
-        center
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        closeAfterTransition
+        BackdropProps={{
+          timeout: 500,
+        }}
       >
       <div className="paper">
         <Box sx={style} className="box">
@@ -88,15 +93,15 @@ function AuthModal() {
             position="static"
             style={{ backgroundColor: "transparent", color: "white" }}
           >
-            <Tabs className="tabs"
+            <Tabs className="tabs" style={{color:'white',borderRadius:10}}
               value={value}
               onChange={handleChange}
               textColor="secondary"
               indicatorColor="secondary"
               aria-label="secondary tabs example"
             >
-              <Tab  label="Login" />
-              <Tab  label="Register" />
+              <Tab  label="Login"  />
+              <Tab  label="Register"  />
             </Tabs>
           </AppBar>
           {value === 0 && <Login handleClose={handleClose}/>}

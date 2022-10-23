@@ -13,12 +13,15 @@ export const ItemsReducer = createSlice({
     setItems: (state, action) => {
       state.value = action.payload;
     },
+    setAlert:(state,action) =>{
+      state.value = action.payload;
+    }
     
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setArchive ,setItems} =
+export const { setArchive ,setItems,setAlert} =
 ItemsReducer.actions;
 
 export default ItemsReducer.reducer;
