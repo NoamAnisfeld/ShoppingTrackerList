@@ -33,10 +33,10 @@ const Form = ({ income, setIncome }) => {
   return (
     <form className="income-form" onSubmit={AddIncome}>
       <div className="form-inner">
-        <input type="text" name="itemName" className="itemName" placeholder="Item Name" ref={itemName} />
-        <input type="text" name="store" className="store" placeholder="Store" ref={store}/>
-        <input type="number" name="price" className="price" placeholder="Price" ref={price}/>
-        <input type="date" name="date" className="date" placeholder="Date" ref={date}/>
+        <input type="text" name="itemName" placeholder="Item Name" ref={itemName} />
+        <input type="text" name="store"  placeholder="Store" ref={store}/>
+        <input type="number" name="price"  placeholder="Price" ref={price}/>
+        <input type="date" name="date"  placeholder="Date" ref={date}/>
         <input type="submit" value="Add Item" />
       </div>
     </form>

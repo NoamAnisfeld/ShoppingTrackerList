@@ -279,9 +279,7 @@ h1 {
     padding-left: 5px;
 	color:white;
 }
-.search-icon{
-	font-size:25px;
-}
+
 @media screen and (max-width:1024px) { 
 	.income-item{
 		width: 100%;
@@ -290,24 +288,6 @@ h1 {
 		font-size:10px;
 	}
 
-	.income-list .income-item .itemName {
-		margin-right: -20px;
-	}
-	.income-list .income-item .store {
-		margin-left:30px;
-	}
-
-	.income-list .income-item .price{
-		min-width: 150px;
-	
-	}
-	.income-list .income-item .date {
-		min-width: 100px;
-	}
-	.income-list .income-item .archive {
-		min-width: 50px;
-	}
-		
 }
 /* ================= Media Queries Small ================= */
 @media screen and (max-width:600px) { 
@@ -315,11 +295,11 @@ h1 {
 		display: none;
 	}
 	.form-inner{
-		width:120%;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
+		width:100%;
+		flex-direction: column;
+		gap:1rem 0;
 	}
+	
 	.search{
 		width:100%;
 	}
@@ -336,6 +316,7 @@ h1 {
 	.income-item1 .income-item2{
 		display: none;
 	}
+	
 	
 }
 
