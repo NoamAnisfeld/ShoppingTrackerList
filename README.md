@@ -16,6 +16,8 @@ The site is fully responsive for all devices,
 
 I used Redux to manage the state, and to manage the data that goes out to the "archive" component.
 
+### It is important to note that when entering a manual order, you must click on the "More items" button to see the new order, because the list is sorted by dates and the old date is always at the top of the list
+
 ##### Explanation of use of the website:
 
 #### On a computer screen
