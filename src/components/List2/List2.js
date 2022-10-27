@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 import React, { useState } from "react";
 import Item from "../Item/Item";
+
 function List2({ income, setIncome}) {
   const [search, setSearch] = useState("");
 

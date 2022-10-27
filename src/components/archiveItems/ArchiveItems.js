@@ -1,21 +1,22 @@
 /* eslint-disable no-undef */
 import React from "react";
 import Item from "../Item/Item";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
 import "../../components/archiveItems/archiveItems.css";
-import { setArchive } from "../../redux/itemsRedux/itemSlice";
+import { setItems } from "../../redux/itemsRedux/itemSlice";
 
 function ArchiveItems() {
 
   const items = useSelector((state) => state.items.value);
+  const dispatch = useDispatch();
 
   const returnArchive = (i) => {
-    setArchive(
+    dispatch(setItems( 
       items.map((item, index) => {
-        if (index !== i) return { ...item, isArchive: false };
+        if (index === i) return { ...item, isArchive: false };
         else return { ...item };
       })
-    );
+    ));
   };
 
   return (
