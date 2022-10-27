@@ -94,7 +94,7 @@ function Login({handleClose}) {
       >
         Login
       </Button>
-      <FormControlLabel style={{color:'black'}}
+      <FormControlLabel style={{color:'gray'}}
         control={
           <Checkbox
             value={rememberMe}

@@ -212,47 +212,11 @@ h1 {
 	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
 }
 
-/* ================= Media Queries Medium ================= */
-@media screen and (max-width:1024px) {
-	.form-inner input[type="date"]{
-		min-width:25%;	
-	}
-	.form-inner input[type="text"]{
-		min-width:25%;
-	}
-	.form-inner input[type="submit"]{
-		min-width:20%;
-	}
-	.form-inner input[type="number"]{
-		min-width:25%;
-	}
-	.archive-list{
-		width:140%;
-		font-size: 0.650em;
-		margin-left:-70px;
-	}
-	 
-}
-/* ================= Media Queries Small ================= */
-@media screen and (max-width:600px) { 
-	
-	
-}
+
 @media screen and (max-width:600px) { 
 	.income-item1 .income-item{
 		display: none;
 		width:20%;
 	}
 }
-@media screen and (min-width:600px) { 
-	.income-item1 .income-item2{
-		display: none;
-		
-	}
-}
 
-@media screen and (min-width:1200px) { 
-	.income-item1 .income-item2{
-		display: none;
-	}
-}

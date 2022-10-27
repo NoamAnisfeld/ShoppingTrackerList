@@ -1,10 +1,10 @@
 import React from "react";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import { Avatar } from "@material-ui/core";
+import { Avatar,Button  } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { auth } from "../../firebase-config";
 import { signOut } from "@firebase/auth";
+import { CryptoState } from "../../CryptoContext";
 
 const useStyles = makeStyles({
   container: {
@@ -39,7 +39,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function UserSidebar(user) {
+export default function UserSidebar() {
+  const { user} = CryptoState();
+
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,
@@ -88,8 +90,9 @@ export default function UserSidebar(user) {
                   className={classes.picture}
                   src={user.photoURL}
                   alt={user.displayName || user.email}
-                 
                 />
+                <h5 style={{ color: "black" }}>{user.email}</h5>
+
                 <span
                   style={{
                     width: "100%",

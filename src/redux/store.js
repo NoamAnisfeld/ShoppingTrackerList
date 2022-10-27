@@ -7,5 +7,4 @@ export default configureStore({
     items: ItemsReducer,
     archiveItems: ItemsReducer,
   },
-  
 })
