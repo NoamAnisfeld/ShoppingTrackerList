@@ -39,7 +39,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function UserSidebar() {
+ function UserSideBar() {
   const { user, setAlert } = CryptoState();
 
   const classes = useStyles();
@@ -125,3 +125,4 @@ export default function UserSidebar() {
     </div>
   );
 }
+export default UserSideBar;
