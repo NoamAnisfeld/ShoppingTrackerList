@@ -74,19 +74,19 @@ function About() {
               name="name"
               placeholder="Your Full Name"
               required
-            />
+            ></textarea>
             <textarea
               type="email"
               name="email"
               placeholder="Your Email"
               required
-            />
+            ></textarea>
             <textarea
               name="message"
               rows="7"
               placeholder="Your Message"
               required
-            />
+            ></textarea>
             <button type="submit" className="btn btn-primary">
               Send Message
             </button>

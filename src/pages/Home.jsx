@@ -7,7 +7,7 @@ import "../index.css";
 import TotalPrice from "../components/totalPrice/TotalPrice";
 import Form from "../components/form/Form";
 import { useEffect, useState } from "react";
-import List2 from "../components/List2/List";
+import List2 from "../components/list/List";
 import axios from "axios";
 import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";

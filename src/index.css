@@ -276,8 +276,6 @@ h1 {
 		align-items:center;
 		font-size:10px;
 	}
-	
-
 
 }
 /* ================= Media Queries Small ================= */
@@ -316,6 +314,5 @@ h1 {
 		width:100%;
 		flex-direction: row;
 	}
-
 }
 
