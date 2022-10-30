@@ -19,6 +19,7 @@ function List2({ income, setIncome}) {
     setIncome(temp);
   };
 
+  
   // Add Archive
   const addArchive = (i) => {
     setIncome(
