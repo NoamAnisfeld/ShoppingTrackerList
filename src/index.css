@@ -278,7 +278,7 @@ h1 {
 	}
 
 }
-/* ================= Media Queries Small ================= */
+
 @media screen and (max-width:600px) { 
 	.income-item1 .income-item{
 		display: none;

@@ -35,9 +35,6 @@ input, button {
 	background: none;
 }
 
-/* body {
-	overflow-x:hidden;
-} */
 
 .App {
 	padding: 30px;
@@ -83,7 +80,6 @@ h1 {
 	right: 0px;
 	bottom: 0px;
 	z-index: 0;
-	/* background-image: linear-gradient(to right, var(--primary), var(--secondary)); */
 	border-radius: 10px;
 	transition: 0.2s;
 }
@@ -105,9 +101,7 @@ h1 {
 	transition: 0.4s;
 	border-radius: 8px;
 }
-/* .form-inner > * {
-	flex: 10% 1 1;
-} */
+
 
 .form-inner input {
 	font-size: 18px;
