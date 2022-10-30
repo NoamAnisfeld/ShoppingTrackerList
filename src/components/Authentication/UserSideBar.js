@@ -1,6 +1,6 @@
 import React from "react";
 import Drawer from "@mui/material/Drawer";
-import { Avatar,Button  } from "@material-ui/core";
+import { Avatar, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { auth } from "../../firebase-config";
 import { signOut } from "@firebase/auth";
@@ -40,7 +40,7 @@ const useStyles = makeStyles({
 });
 
 export default function UserSidebar() {
-  const { user} = CryptoState();
+  const { user, setAlert } = CryptoState();
 
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -60,6 +60,12 @@ export default function UserSidebar() {
 
   const logOut = async () => {
     signOut(auth);
+    setAlert({
+      open: true,
+      message: "You have successfully logged out ",
+      type: "success",
+    });
+
     toggleDrawer();
   };
 

@@ -6,7 +6,6 @@ export const ItemsReducer = createSlice({
     value: [],
   },
 
-
   reducers: {
     setItems: (state, action) => {
       state.value = action.payload;
@@ -14,11 +13,14 @@ export const ItemsReducer = createSlice({
     setReturnArchive: (state, action) => {
       state.value = action.payload;
     },
+    setArchive: (state, action) => {
+      state.value = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {setItems,setReturnArchive} =
+export const {setItems,setReturnArchive,setArchive} =
 ItemsReducer.actions;
 
 export default ItemsReducer.reducer;

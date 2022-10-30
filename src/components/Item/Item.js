@@ -49,7 +49,7 @@ function Item({
           }}
         >
           <motion.h5 className="item-name" layout="position">
-            {income.itemName}
+            {income.title}
           </motion.h5>
           <img src={row} alt="Row" className="row-image" />
           {isOpen === true && (
@@ -73,7 +73,7 @@ function Item({
                   className="archive"
                   onClick={() => returnArchiveHandle(index)}
                 >
-                  ReturnArchive
+                  Refund
                 </button>
               )}
             </motion.div>
@@ -87,7 +87,7 @@ function Item({
             x
           </button>
         )}
-        <button className="itemName">{income.itemName}</button>
+        <button className="itemName">{income.title}</button>
         <div className="store">{income.store}</div>
         <div className="price">{income.price}$</div>
         <div className="date">{day + "/" + month + "/" + year}</div>

@@ -29,13 +29,14 @@ function List2({ income, setIncome}) {
     );
   };
 
+  // Sort Date 
   const sortByDate = (a, b) => {
     return b.date - a.date;
   };
 
   // Search bar
-  const filteredItems = income.filter((item)=>{
-    return item.itemName.toLowerCase().includes(search.toLowerCase());
+  const filteredItems = income.filter((item)=>{ 
+    return item.title?.toLowerCase().includes(search.toLowerCase());
   });
 
   return (
@@ -51,10 +52,8 @@ function List2({ income, setIncome}) {
         />
       <br></br>
       <br></br>
-      {filteredItems
-        .slice(0, visible)
-        .sort(sortByDate)
-        .map(
+      
+      {filteredItems.slice(0,visible).sort(sortByDate).map(
           (value, index) =>
             value.isArchive === false && (
               <Item
@@ -64,6 +63,7 @@ function List2({ income, setIncome}) {
                 removeIncome={removeIncome}
                 addArchive={addArchive}
                 showButton={true}
+
               />
             )
         )}

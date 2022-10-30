@@ -4,17 +4,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable array-callback-return */
 import "../index.css";
-import List from "../components/List/List";
+import TotalPrice from "../components/totalPrice/TotalPrice";
 import Form from "../components/Form/Form";
 import { useEffect, useState } from "react";
 import List2 from "../components/List2/List2";
 import axios from "axios";
 import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { CryptoState } from '../CryptoContext';
 
 function Home() {
   const items = useSelector((state) => state.items.value);
   const dispatch = useDispatch();
+  const { setAlert } = CryptoState();
 
   useEffect(() => {
     if (items.length === 0) {
@@ -27,20 +29,25 @@ function Home() {
               isArchive: false,
               date: "10/10/2020",
               store: "store",
-              itemName: "Item Name",
+              itemName:'Item Name',
             };
           });
           dispatch(setItems(arr));
           console.log(arr);
         })
         .catch((err) => {
-          console.log("The Api is failed , Please fix it", err);
+          setAlert({
+            open: true,
+            message: "Api Failed",
+            type: "error",
+          });
         });
-    }
+      }
   }, []);
 
   const [totalIncome, setTotalIncome] = useState(0);
 
+  
   useEffect(() => {
     let temp = 0;
     for (let i = 0; i < items.length; i++) {
@@ -53,7 +60,7 @@ function Home() {
   return (
     <div className="App">
       <h1 style={{ textAlign: "center" }}>Shopping Tracker List</h1>
-      <List totalIncome={totalIncome} />
+      <TotalPrice totalIncome={totalIncome} />
       <Form income={items} setIncome={(data) => dispatch(setItems(data))} />
       <List2 income={items} setIncome={(data) => dispatch(setItems(data))} />
     </div>

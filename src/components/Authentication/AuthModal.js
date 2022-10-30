@@ -12,6 +12,7 @@ import './autoModal.css';
 import GoogleButton from "react-google-button";
 import { auth } from "../../firebase-config";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { CryptoState } from '../../CryptoContext';
 
 
 const style = {
@@ -30,6 +31,7 @@ const style = {
 
 function AuthModal() {
   const [value, setValue] = useState(0);
+  const { setAlert } = CryptoState();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -50,7 +52,11 @@ function AuthModal() {
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
       .then((res) => {
-        alert(`Sign Up Successful. Welcome ${res.user.email}`)
+        setAlert({
+          open: true,
+          message: `Sign Up Successful , Welcome!`,
+          type: "success",
+        });        
         handleClose();
       })
       .catch((error) => {
