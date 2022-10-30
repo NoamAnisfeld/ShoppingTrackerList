@@ -6,6 +6,7 @@ import { auth } from "../../firebase-config";
 import { signOut } from "@firebase/auth";
 import { CryptoState } from "../../CryptoContext";
 
+
 const useStyles = makeStyles({
   container: {
     width: 350,
