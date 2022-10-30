@@ -1,8 +1,8 @@
 import "./header.css";
 import { AppBar, Container, Toolbar } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import UserSideBar from '../Authentication/UserSideBar';
-import AuthModal from "../Authentication/AuthModal";
+import UserSideBar from '../authentication/UserSideBar';
+import AuthModal from "../authentication/AuthModal";
 import { useState,useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase-config";
@@ -10,6 +10,7 @@ import { auth } from "../../firebase-config";
 function Header() {
   const [user, setUser] = useState(null);
 
+  
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) setUser(user);
