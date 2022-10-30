@@ -20,6 +20,7 @@
     "firebase": "^9.9.2",
     "framer-motion": "^7.6.1",
     "pagination": "^0.4.6",
+    "postcss-normalize": "^10.0.1",
     "react": "^18.2.0",
     "react-alice-carousel": "^2.6.4",
     "react-dom": "^18.2.0",
@@ -67,6 +68,7 @@
     ]
   },
   "devDependencies": {
-    "@redux-devtools/core": "^3.13.1"
+    "@redux-devtools/core": "^3.13.1",
+    "css-minimizer-webpack-plugin": "^4.2.2"
   }
 }
