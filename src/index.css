@@ -271,11 +271,13 @@ h1 {
 
 @media screen and (max-width:1024px) { 
 	.income-item{
-		width: 100%;
+		width: 20%;
 		justify-content:center;
 		align-items:center;
 		font-size:10px;
 	}
+	
+
 
 }
 /* ================= Media Queries Small ================= */
@@ -314,6 +316,6 @@ h1 {
 		width:100%;
 		flex-direction: row;
 	}
-	
+
 }
 

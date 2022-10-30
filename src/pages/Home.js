@@ -5,9 +5,9 @@
 /* eslint-disable array-callback-return */
 import "../index.css";
 import TotalPrice from "../components/totalPrice/TotalPrice";
-import Form from "../components/Form/Form";
+import Form from "../components/form/Form";
 import { useEffect, useState } from "react";
-import List2 from "../components/List2/List2";
+import List2 from "../components/List2/List";
 import axios from "axios";
 import { setItems } from "../redux/itemsRedux/itemSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -29,7 +29,6 @@ function Home() {
               isArchive: false,
               date: "10/10/2020",
               store: "store",
-              itemName:'Item Name',
             };
           });
           dispatch(setItems(arr));
@@ -47,7 +46,7 @@ function Home() {
 
   const [totalIncome, setTotalIncome] = useState(0);
 
-  
+
   useEffect(() => {
     let temp = 0;
     for (let i = 0; i < items.length; i++) {

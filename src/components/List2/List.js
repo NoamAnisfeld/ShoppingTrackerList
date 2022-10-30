@@ -1,9 +1,9 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-undef */
 import React, { useState } from "react";
-import Item from "../Item/Item";
+import Item from "../item/Item";
 
-function List2({ income, setIncome}) {
+function List({ income, setIncome}) {
   const [search, setSearch] = useState("");
 
   const [visible, setVisible] = useState(5);
@@ -19,7 +19,6 @@ function List2({ income, setIncome}) {
     setIncome(temp);
   };
 
-  
   // Add Archive
   const addArchive = (i) => {
     setIncome(
@@ -37,7 +36,7 @@ function List2({ income, setIncome}) {
 
   // Search bar
   const filteredItems = income.filter((item)=>{ 
-    return item.title?.toLowerCase().includes(search.toLowerCase());
+    return item.title.toLowerCase().includes(search.toLowerCase());
   });
 
   return (
@@ -64,7 +63,6 @@ function List2({ income, setIncome}) {
                 removeIncome={removeIncome}
                 addArchive={addArchive}
                 showButton={true}
-
               />
             )
         )}
@@ -75,4 +73,4 @@ function List2({ income, setIncome}) {
   );
 }
 
-export default List2;
+export default List;

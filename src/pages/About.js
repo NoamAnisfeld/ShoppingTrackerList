@@ -4,7 +4,6 @@ import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
-import "./about.css";
 
 function About() {
   const form = useRef();
@@ -13,7 +12,7 @@ function About() {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_uama4xr",
+      "service_rsz4p62",
       "template_kf8z3kc",
       form.current,
       "KQZ1FUigy-wCZY0js"
@@ -70,13 +69,13 @@ function About() {
             </article>
           </div>
           <form ref={form} onSubmit={sendEmail}>
-            <input
+            <textarea
               type="text"
               name="name"
               placeholder="Your Full Name"
               required
             />
-            <input
+            <textarea
               type="email"
               name="email"
               placeholder="Your Email"
@@ -87,7 +86,7 @@ function About() {
               rows="7"
               placeholder="Your Message"
               required
-            ></textarea>
+            />
             <button type="submit" className="btn btn-primary">
               Send Message
             </button>
